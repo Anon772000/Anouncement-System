@@ -58,9 +58,10 @@ def TimeLoop():
                             z+=1
                         choice = random.choice(messageArray)
                         logging.warning('| Annoucement Rang '+ choice +', spacing is '+ str(frequency))
-                        #  = threading.Thread(target=TimeLoop)
+                        print(choice)
+                        running  = threading.Thread(target=play, args=(str(choice),))
                         logging.warning("Starting Threads")
-                        x.start()
+                        running.start()
                         time.sleep(60)
                     
  
@@ -68,8 +69,8 @@ def TimeLoop():
 def play(id):
     data = json.load(open('messages.json'))
     for r in data:
-        if r == id:
-            subprocess.call(['ffplay -autoexit -nodisp assets/messages' + data[r]['name']], shell=True)
+        if data[r]['name'] == id:
+            subprocess.call(['ffplay -autoexit -nodisp  https://www.myinstants.com/media/sounds/movie_1.mp3'], shell=True)
             logging.warning('| Message played,-' + data[r]['dir'])
             return
         else:
