@@ -1,0 +1,9 @@
+[Unit]
+Description=Core Annoucement Service
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /etc/Anouncement-System/core.py
+[Install]
+WantedBy=multi-user.target

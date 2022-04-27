@@ -23,8 +23,8 @@ def TimeLoop():
             todaysdate = dt.datetime.now(pytz.timezone(TIMEZONE))
             #Creates current hour and min
             currentTIme = [todaysdate.strftime("%H"), todaysdate.strftime("%M")]
-            globalSettings = json.load(open("global.json"))
-            messages = json.load(open("messages.json"))
+            globalSettings = json.load(open("/etc/Anouncement-System/global.json"))
+            messages = json.load(open("/etc/Anouncement-System/messages.json"))
             minAn = int(globalSettings['Annoucements']['min'])
             maxAn = int(globalSettings['Annoucements']['max'])
             frequency = round(60/random.choice(range(minAn, maxAn)))
@@ -67,10 +67,10 @@ def TimeLoop():
  
                 system('clear')
 def play(id):
-    data = json.load(open('messages.json'))
+    data = json.load(open('/etc/Anouncement-System/messages.json'))
     for r in data:
         if id == id:
-            subprocess.call(['ffplay -autoexit -nodisp  https://www.myinstants.com/media/sounds/movie_1.mp3'], shell=True)
+            subprocess.call(['ffplay -autoexit -nodisp  /etc/Anouncement-System/assets/messages/'+id], shell=True)
             logging.warning('| Message played,-' + data[r]['name'])
             return
         else:
