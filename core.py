@@ -23,8 +23,8 @@ def TimeLoop():
             todaysdate = dt.datetime.now(pytz.timezone(TIMEZONE))
             #Creates current hour and min
             currentTIme = [todaysdate.strftime("%H"), todaysdate.strftime("%M")]
-            globalSettings = json.load(open("/home/harrisonbreen/PythonScripts/Anounce/global.json"))
-            messages = json.load(open("/home/harrisonbreen/PythonScripts/Anounce/messages.json"))
+            globalSettings = json.load(open("global.json"))
+            messages = json.load(open("messages.json"))
             minAn = int(globalSettings['Annoucements']['min'])
             maxAn = int(globalSettings['Annoucements']['max'])
             frequency = round(60/random.choice(range(minAn, maxAn)))
@@ -66,10 +66,10 @@ def TimeLoop():
  
                 system('clear')
 def play(id):
-    data = json.load(open('/home/harrisonbreen/PythonScripts/Anounce/messages.json'))
+    data = json.load(open('messages.json'))
     for r in data:
         if r == id:
-            subprocess.call(['ffplay -autoexit -nodisp /Anounce/assets/messages' + data[r]['name']], shell=True)
+            subprocess.call(['ffplay -autoexit -nodisp assets/messages' + data[r]['name']], shell=True)
             logging.warning('| Message played,-' + data[r]['dir'])
             return
         else:
