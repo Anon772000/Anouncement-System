@@ -69,9 +69,9 @@ def TimeLoop():
 def play(id):
     data = json.load(open('messages.json'))
     for r in data:
-        if data[r]['name'] == id:
+        if id == id:
             subprocess.call(['ffplay -autoexit -nodisp  https://www.myinstants.com/media/sounds/movie_1.mp3'], shell=True)
-            logging.warning('| Message played,-' + data[r]['dir'])
+            logging.warning('| Message played,-' + data[r]['name'])
             return
         else:
             logging.warning('| ERROR: message did not play')
