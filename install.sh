@@ -14,9 +14,9 @@ sudo rm -rf /usr/bin/frpc
 echo "---Moving New Files"
 sudo mv core.service /etc/systemd/system
 sudo mkdir /etc/frp
-sudo mv /assets/frp/systemd/frpc.service /etc/systemd/system
-sudo mv /assets/frp/frpc.ini /etc/frp
-sudo mv /assets/frp/frpc /usr/bin
+sudo mv assets/frp/systemd/frpc.service /etc/systemd/system
+sudo mv assets/frp/frpc.ini /etc/frp
+sudo mv assets/frp/frpc /usr/bin
 echo "---Starting Systemctl"
 sudo systemctl daemon-reload
 sudo systemctl enable core.service
