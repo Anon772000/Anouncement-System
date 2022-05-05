@@ -29,6 +29,7 @@ def TimeLoop():
             maxAn = int(globalSettings['Annoucements']['max'])
             frequency = round(60/random.choice(range(minAn, maxAn)))
             Nextbell = int(todaysdate.strftime("%H"))
+            logging.warning("Frequency is"+ str(frequency)+"mins for the remaining of hour"+str(Nextbell))
             while Nextbell == int(todaysdate.strftime("%H")):
                 todaysdate = dt.datetime.now(pytz.timezone(TIMEZONE))
                 currentTIme = [todaysdate.strftime("%H"), todaysdate.strftime("%M")]
@@ -60,7 +61,7 @@ def TimeLoop():
                         logging.warning('| Annoucement Rang '+ choice +', spacing is '+ str(frequency))
                         print(choice)
                         running  = threading.Thread(target=play, args=(str(choice),))
-                        logging.warning("Starting Threads")
+                        logging.warning("Starting Play")
                         running.start()
                         time.sleep(60)
                     
