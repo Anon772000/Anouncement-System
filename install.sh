@@ -23,3 +23,6 @@ sudo systemctl enable core.service
 sudo systemctl enable frpc.service
 sudo systemctl start core.service
 echo "---Finished Installing Systemctl Please Enter host ip in /etc/frp/frpc.ini then run sudo systemctl start frpc.service"
+echo "---Moving Web files"
+sudo rm -rf /var/www/html
+sudo mv index
