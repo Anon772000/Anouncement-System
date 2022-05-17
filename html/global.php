@@ -46,18 +46,18 @@ $arr1 = json_decode(file_get_contents('assets/json/global.json'), true);
             <div class="row">
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Run Time</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?=$arr1['timing']['start']?>">
-                        <small id="emailHelp" class="form-text text-muted">The starting Time in 24hr</small>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?=$arr1['timing']['end']?>">
-                        <small id="emailHelp" class="form-text text-muted">The Ending Time in 24hr</small>
+                        <label for="startTime">Run Time</label>
+                        <input type="time" class="form-control" id="startTime" aria-describedby="startTimehelp"value="<?=$arr1['timing']['start']?>">
+                        <small id="startTimehelp" class="form-text text-muted">The starting Time in 24hr</small>
+                        <input type="time" class="form-control" id="endTime" aria-describedby="endTimehelp"value="<?=$arr1['timing']['end']?>">
+                        <small id="endTimehelp" class="form-text text-muted">The Ending Time in 24hr</small>
                     </div>
                     <div class="form-group">
-                    <label for="exampleInputEmail1">Amount of Annoucements an hour</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?=$arr1['Annoucements']['min']?>">
-                        <small id="emailHelp" class="form-text text-muted">The Min in an hour</small>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?=$arr1['Annoucements']['max']?>">
-                        <small id="emailHelp" class="form-text text-muted">The Min in an hour<</small>
+                    <label for="Minhour">Amount of Annoucements an hour</label>
+                        <input type="number" class="form-control" id="Minhour" aria-describedby="MinhourHelp" value="<?=$arr1['Annoucements']['min']?>">
+                        <small id="MinhourHelp" class="form-text text-muted">The Min in an hour</small>
+                        <input type="number" class="form-control" id="Maxhour" aria-describedby="MaxhourHelp"value="<?=$arr1['Annoucements']['max']?>">
+                        <small id="MaxhourHelp" class="form-text text-muted">The Min in an hour<</small>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
