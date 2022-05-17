@@ -15,14 +15,10 @@ echo "---Moving New Files"
 sudo mv core.service /etc/systemd/system
 sudo mkdir /etc/frp
 sudo mv assets/frp/systemd/frpc.service /etc/systemd/system
-sudo mv assets/frp/frpc.ini /etc/frp
-sudo mv assets/frp/frpc /usr/bin
 echo "---Starting Systemctl"
 sudo systemctl daemon-reload
 sudo systemctl enable core.service
-sudo systemctl enable frpc.service
 sudo systemctl start core.service
-echo "---Finished Installing Systemctl Please Enter host ip in /etc/frp/frpc.ini then run sudo systemctl start frpc.service"
 echo "---Moving Web files"
 sudo rm -rf /var/www/html
-sudo mv index
+sudo mv /etc/Anouncement-System/html /var/www/
