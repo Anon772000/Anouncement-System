@@ -1,5 +1,5 @@
 <?php
-include "assets/inc/header.inc.php";
+include "/etc/Anouncement-System/assets/inc/header.inc.php";
 date_default_timezone_set('Australia/Sydney');
 $time =  date("H:i");
 $arr1 = json_decode(file_get_contents('messages.json'), true);
