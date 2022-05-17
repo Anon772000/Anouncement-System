@@ -2,11 +2,11 @@
 include "assets/inc/header.inc.php";
 date_default_timezone_set('Australia/Sydney');
 $time =  date("H:i");
-$arr1 = json_decode(file_get_contents('messages.json'), true);
+$arr1 = json_decode(file_get_contents('assets/json/global.json'), true);
 ?>
 <style>
 .btn {
-    
+
 
     height: 70px !important;
     width: 190px !important;
@@ -43,42 +43,24 @@ $arr1 = json_decode(file_get_contents('messages.json'), true);
         </div>
         <br><br>
         <div class="col-md-10 mr-auto ml-auto text-center">
-        <div class="row">
-                
-            <?php
-             $x = 0;
-        foreach ($arr1 as $key => $value){
-            if($x < 2){
-                print('
-                <div class="col text-center">
-                <a type="button" class="btn btn-primary btn-lg" href="#">'.$value['name'].'</a>
-                </div>
-                ');
-                $x++;
-            }else{
-                $x = 1;
-                print('
-                </div>
-                <br>
-                <div class="separator-line separator-primary"></div>
-                <br>
-                <div class="row">
-                <div class="col text-center">
-                <a type="button" class="btn btn-primary btn-lg" href="#">'.$value['name'].'</a>
-                </div>
-                ');
-            }
-
-
-        }
-
-
-
-
-
-            ?>
-            
-
+            <div class="row">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Run Time</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?=$arr1['timing']['start']?>">
+                        <small id="emailHelp" class="form-text text-muted">The starting Time in 24hr</small>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?=$arr1['timing']['end']?>">
+                        <small id="emailHelp" class="form-text text-muted">The Ending Time in 24hr</small>
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">Amount of Annoucements an hour</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?=$arr1['Annoucements']['min']?>">
+                        <small id="emailHelp" class="form-text text-muted">The Min in an hour</small>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"value="<?=$arr1['Annoucements']['max']?>">
+                        <small id="emailHelp" class="form-text text-muted">The Min in an hour<</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </div>
