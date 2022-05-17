@@ -34,7 +34,7 @@ $arr1 = json_decode(file_get_contents('messages.json'), true);
     </div> -->
     <div class="container">
         <div class="col-md-5 mr-auto ml-auto text-center">
-            <img src="assets/img/logo/sixt5.png" style="height:10em;" alt="">
+            <img src="/etc/Anouncement-System/assets/img/logo/sixt5.png" style="height:10em;" alt="">
         </div>
         <div class="row">
             <div class="col-md-6 mr-auto ml-auto text-center">
