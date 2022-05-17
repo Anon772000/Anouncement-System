@@ -60,7 +60,7 @@ $time =  date("H:i");
                         class="btn btn-primary btn-lg" href="messages.php">More Messages</a>
                 </div>
                 <div class="col text-center">
-                    <a type='button' class="btn btn-danger btn-lg" href="#">Manage</a>
+                    <a type='button' class="btn btn-danger btn-lg" href="global.php">Manage</a>
                 </div>
 
             </div>
