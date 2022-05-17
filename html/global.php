@@ -47,9 +47,9 @@ $arr1 = json_decode(file_get_contents('assets/json/global.json'), true);
                 <form>
                     <div class="form-group">
                         <label for="startTime">Run Time</label>
-                        <input type="time" class="form-control" id="startTime" aria-describedby="startTimehelp"value="<?=$arr1['timing']['start']?>">
+                        <input type="time" class="form-control" id="startTime" aria-describedby="startTimehelp"value="<?=substr_replace($arr1['timing']['start'],":",2,0)?>">
                         <small id="startTimehelp" class="form-text text-muted">The starting Time in 24hr</small>
-                        <input type="time" class="form-control" id="endTime" aria-describedby="endTimehelp"value="<?=$arr1['timing']['end']?>">
+                        <input type="time" class="form-control" id="endTime" aria-describedby="endTimehelp"value="<?=substr_replace($arr1['timing']['end'],":",2,0)?>">
                         <small id="endTimehelp" class="form-text text-muted">The Ending Time in 24hr</small>
                     </div>
                     <div class="form-group">
