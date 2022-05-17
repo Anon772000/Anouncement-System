@@ -21,4 +21,4 @@ sudo systemctl enable core.service
 sudo systemctl start core.service
 echo "---Moving Web files"
 sudo rm -rf /var/www/html
-sudo mvdir /etc/Anouncement-System/html /var/www/
+sudo mv /etc/Anouncement-System/html /var/www/
