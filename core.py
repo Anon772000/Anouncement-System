@@ -27,43 +27,47 @@ def TimeLoop():
             messages = json.load(open("/var/www/html/assets/json/messages.json"))
             minAn = int(globalSettings['Annoucements']['min'])
             maxAn = int(globalSettings['Annoucements']['max'])
+            Astart = int(globalSettings['timing']['start'])
+            Aend = int(globalSettings['timing']['end'])
             frequency = round(60/random.choice(range(minAn, maxAn)))
             Nextbell = int(todaysdate.strftime("%H"))
             logging.warning("Frequency is"+ str(frequency)+"mins for the remaining of hour"+str(Nextbell))
-            while Nextbell == int(todaysdate.strftime("%H")):
-                todaysdate = dt.datetime.now(pytz.timezone(TIMEZONE))
-                currentTIme = [todaysdate.strftime("%H"), todaysdate.strftime("%M")]
-                print(currentTIme)
-                print('Spacing is '+ str(frequency) +' and current min is ' + todaysdate.strftime("%M"))
+            if Astart < Nextbell < Aend :
+                
+                while Nextbell == int(todaysdate.strftime("%H")):
+                    todaysdate = dt.datetime.now(pytz.timezone(TIMEZONE))
+                    currentTIme = [todaysdate.strftime("%H"), todaysdate.strftime("%M")]
+                    print(currentTIme)
+                    print('Spacing is '+ str(frequency) +' and current min is ' + todaysdate.strftime("%M"))
 
-                mins = int(todaysdate.strftime("%M"))
-                sixtynine = 0
-                while sixtynine == 0:
-                    mins = mins + 1
-                    if(mins / frequency).is_integer():
-                        sixtynine = 1
-                        timetill = mins - int(todaysdate.strftime("%M"))
-                        
+                    mins = int(todaysdate.strftime("%M"))
+                    sixtynine = 0
+                    while sixtynine == 0:
+                        mins = mins + 1
+                        if(mins / frequency).is_integer():
+                            sixtynine = 1
+                            timetill = mins - int(todaysdate.strftime("%M"))
+                            
 
-                print(str(timetill)+' mins till next ring')
-                if (int(todaysdate.strftime("%M")) / frequency).is_integer():
-                    if int(todaysdate.strftime("%M")) == 0:
-                        print('sleeping for 60 seconds')
-                        time.sleep(60)
-                        break
-                    else:
-                        messageArray =[]
-                        for x in messages:
-                            z = 1
-                            messageArray.insert(int(z),messages[x]['name'])
-                            z+=1
-                        choice = random.choice(messageArray)
-                        logging.warning('| Annoucement Rang '+ choice +', spacing is '+ str(frequency))
-                        print(choice)
-                        running  = threading.Thread(target=play, args=(str(choice),))
-                        logging.warning("Starting Play")
-                        running.start()
-                        time.sleep(60)
+                    print(str(timetill)+' mins till next ring')
+                    if (int(todaysdate.strftime("%M")) / frequency).is_integer():
+                        if int(todaysdate.strftime("%M")) == 0:
+                            print('sleeping for 60 seconds')
+                            time.sleep(60)
+                            break
+                        else:
+                            messageArray =[]
+                            for x in messages:
+                                z = 1
+                                messageArray.insert(int(z),messages[x]['name'])
+                                z+=1
+                            choice = random.choice(messageArray)
+                            logging.warning('| Annoucement Rang '+ choice +', spacing is '+ str(frequency))
+                            print(choice)
+                            running  = threading.Thread(target=play, args=(str(choice),))
+                            logging.warning("Starting Play")
+                            running.start()
+                            time.sleep(60)
                     
  
                 system('clear')
