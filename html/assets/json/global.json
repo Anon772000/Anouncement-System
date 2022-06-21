@@ -1,11 +1,11 @@
 {
     "timing": {
-        "start": "0800",
-        "end": "1800"
+        "start": "5",
+        "end": "21"
     },
     "Annoucements": {
-        "min": "30",
-        "max": "37"
+        "min": "2",
+        "max": "2"
     }
     
 }
