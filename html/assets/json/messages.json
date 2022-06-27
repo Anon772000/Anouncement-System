@@ -1,18 +1,18 @@
 {
-    "DistractionsAreDangerous": {
-        "id": "DistractionsAreDangerous",
-        "name": "DistractionsAreDangerous.mp3"
+    "html_assets_messages_DistractionsAreDangerous_All_Lang": {
+        "id": "html_assets_messages_DistractionsAreDangerous_All_Lang",
+        "name": "html_assets_messages_DistractionsAreDangerous_All_Lang.mp3"
     },
-    "ParentsKeepClose": {
-        "id": "ParentsKeepClose",
-        "name": "ParentsKeepClose.mp3"
+    "html_assets_messages_ParentsKeepClose_All_Lang": {
+        "id": "html_assets_messages_ParentsKeepClose_All_Lang",
+        "name": "html_assets_messages_ParentsKeepClose_All_Lang.mp3"
     },
-    "SuperviseChildren": {
-        "id": "SuperviseChildren",
-        "name": "SuperviseChildren.mp3"
+    "html_assets_messages_SuperviseChildren_All_Lang": {
+        "id": "html_assets_messages_SuperviseChildren_All_Lang",
+        "name": "html_assets_messages_SuperviseChildren_All_Lang.mp3"
     },
-    "SuperviseYourOwnChildren": {
-        "id": "SuperviseYourOwnChildren",
-        "name": "SuperviseYourOwnChildren.mp3"
+    "html_assets_messages_SuperviseYourOwnChildren_All_Lang": {
+        "id": "html_assets_messages_SuperviseYourOwnChildren_All_Lang",
+        "name": "html_assets_messages_SuperviseYourOwnChildren_All_Lang.mp3"
     }
 }
